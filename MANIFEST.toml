@@ -1,0 +1,20 @@
+uuid = "dd511bce-8ca9-4d60-930c-b178240305a5"
+name = "Local cover art scripting"
+authors = ["Laurent Monin"]
+version = "1.0.0"
+description = "Adds a scripting mode to the Local Files cover art provider: match local cover art by a file name pattern produced by a tagger script."
+long_description = """
+This plugin registers an additional matching mode for Picard's built-in
+"Local Files" cover art provider. Instead of a regular expression, the mode
+evaluates a tagger script for each file's metadata and uses the result as a
+file name pattern (with `*`, `?` and `{a,b}` wildcards) to find the matching
+local cover art files.
+
+Example pattern:
+
+    %albumartist% - %album%$if(%date%, [%date%],).{jpg,png}
+"""
+api = ["3.0"]
+license = "GPL-2.0-or-later"
+license_url = "https://www.gnu.org/licenses/gpl-2.0.html"
+categories = ["cover-art"]
